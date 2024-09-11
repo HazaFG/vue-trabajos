@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma con Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <div id="app">
+    <label for="numero1">Ingresa el primer numero:</label>
+    <input type="number" v-model.number="num1" id="numero1">
+
+    <label for="numero2">Ingresa el segundo numero:</label>
+    <input type="number" v-model.number="num2" id="numero2">
+    
+
+    <!-- BOTON -->
+    <button @click="sumar">Sumar</button>
+
+    <p>Resultado: {{ resultado }}</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        num1: 0,   
+        num2: 0,   
+        resultado: 0  
+      },
+      methods: {
+        sumar() {
+          this.resultado = this.num1 + this.num2;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
